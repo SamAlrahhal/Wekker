@@ -16,6 +16,7 @@ void setup() {
   lcd.init();
   lcd.clear();         
   lcd.backlight();
+  lcd.print("Welkom");
   Serial.begin(9600);
 }
 
