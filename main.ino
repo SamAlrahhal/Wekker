@@ -1,12 +1,34 @@
+#define BUZZER 3
+#define MICRO 4
+#define SW 5
+#define SDArtc A3
+#define SLKrtc A2
+#define VRx A1
+#define VRy A0
 
-int ledPin = 6;
+#include <LiquidCrystal_I2C.h>
+
+LiquidCrystal_I2C lcd(0x27,16,2);
+
 void setup() {
-pinMode(ledPin, OUTPUT);
+  pinMode(BUZZER, OUTPUT);
+  pinMode(MICRO, INPUT);
+  lcd.init();
+  lcd.clear();         
+  lcd.backlight();
+  Serial.begin(9600);
 }
 
 void loop() {
-  for(int i = 0; i < 255; i++){
-    analogWrite(ledPin, i);
-    delay(25);
-  }
+  
 }
+void Alarm(){
+  bool status = false;
+  do{
+    digitalWrite(BUZZER, HIGH);
+    delay(250);
+    digitalWrite(BUZZER, LOW);
+    delay(250);
+  }while(digitalRead(MICRO) != HIGH);
+}
+
