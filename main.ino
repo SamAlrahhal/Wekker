@@ -25,10 +25,11 @@ void loop() {
 }
 void Alarm(){
   bool status = false;
+  
   do{
-    digitalWrite(BUZZER, HIGH);
+    tone(BUZZER, 500);
     delay(250);
-    digitalWrite(BUZZER, LOW);
+    noTone(BUZZER);
     delay(250);
   }while(digitalRead(MICRO) != HIGH);
 }
