@@ -1,6 +1,6 @@
 #define BUZZER 3
 #define MICRO 4
-#define switchJOY 6
+#define switchJOY 5
 #define SDArtc A3
 #define SLKrtc A2
 #define VRx A1
