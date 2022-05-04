@@ -53,6 +53,7 @@ void loop() {
 void Alarm()
 {
   bool status = false;
+  
   do{
     tone(BUZZER, 500);
     delay(250);
